@@ -4,6 +4,7 @@ const routes = express.Router();
 
 const Usuario = require('./controllers/usuarios.controller');
 const Produto = require('./controllers/produtos.controller')
+const Agendamento = require('./controllers/agendamentos.controller')
 
 
 routes.get('/', Usuario.index);
@@ -22,5 +23,8 @@ routes.get('/api/produtosDetails/:_id', Produto.details);
 routes.delete('/api/produtos/:_id', Produto.delete);
 routes.put('/api/produtos/', Produto.update);
 
+//ROTAS DE AGENDAMENTO
+routes.post('/api/agendamento', Agendamento.create);
+routes.get('/api/agendamento', Agendamento.index);
 
 module.exports = routes;
